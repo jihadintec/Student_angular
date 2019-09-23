@@ -14,8 +14,8 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let Student of Students">
-                <tr>
+            <tr *ngFor="let Studentclass of studentclass">
+
 
                     <!---- <td>[(ngModel)]="app-student.studentId"</td>
                 <td>[(ngModel)]="app-student.firstName"</td>
@@ -25,21 +25,20 @@
                 <td>[(ngModel)]="app-student.nationalNumber"</td>
                 <td>[(ngModel)]="app-student.gender"</td>
                 <td>[(ngModel)]="app-student.dateOfBirth"</td>-->
-
-                    <td>{{ firstName }}</td>
-                    <td>{{lastName ? lastName : 'N/A'}}</td>
-                    <td>{{mobileNumber ? mobileNumber : 'N/A'}}</td>
-                    <td>{{address ? address : 'N/A'}}</td>
-                    <td>{{nationalNumber ? nationalNumber : 'N/A'}}</td>
-                    <td>{{gender ? gender : 'N/A'}}</td>
-                    <td>{{dateOfBirth ? dateOfBirth : 'N/A'}}</td>
+                <td>{{Studentclass.studentId}}</td>
+                    <td>{{Studentclass.firstName}}</td>
+                    <td>{{ Studentclass.lastName}}</td>
+                    <td>{{Studentclass.dateOfBirth}}</td>
+                    <td>{{Studentclass.gender}}</td>
+                    <td>{{Studentclass.email}}</td>
+                    <td>{{Studentclass.mobileNumber}}</td>
+                    <td>{{Studentclass.nationalNumber}}</td>
                     <!--<td>[(ngModel)]="app-student.email"</td>-->
-                    <td>{{email ? email : 'N/A'}}</td>
+
                 </tr>
         </tbody>
     </table>
     <div>
-        <button (click)="viewStudentList()">clickme</button>
+        <button (click)="findAll">clickme</button>
     </div>
 </div>
-{{ firstName }}

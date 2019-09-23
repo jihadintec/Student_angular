@@ -12,12 +12,7 @@ export class ViewstudentComponent implements OnInit {
   constructor(private service: StudentService) { }
 
   ngOnInit() {
-    this.viewStudentList();
+    // this.viewStudentList();
   }
-  viewStudentList(): any {
-    this.service.viewStudentList()
-    .then(Response => {
-      this.Student = Response;
-      })
-  }
+
 }

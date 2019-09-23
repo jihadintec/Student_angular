@@ -22,8 +22,6 @@ this.service.excuteHelloWorldBeanService().subscribe(
 }
 handelresponse(response) {
  console.log(response);
- console.log(response.message);
- this.message = response.message;
 }
 }
 

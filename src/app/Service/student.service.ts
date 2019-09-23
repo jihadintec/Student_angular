@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Studentclass } from '../studentclass';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,18 +9,26 @@ import { HttpClient } from '@angular/common/http';
 export class StudentService {
 
 
-constructor(private http: HttpClient
-  ) { }
-  excutestudentList() {
-    return this.http.get('http://localhost:8080/showme');
+  private usersUrl: string;
+
+  constructor(private http: HttpClient) {
   }
-  viewStudentList() {
-    // tslint:disable-next-line:no-unused-expression
-    this.excutestudentList() .toPromise()
-    .then(this.handelresponse);
-    // .subscribe(
-    //   response => this.handelresponse(response));
-    }
+
+ findAll(): Observable<Studentclass[]> {
+    return this.http.get<Studentclass[]>('http://localhost:8080/showme');
+  }
+
+save(studentclass: Studentclass) {
+    return this.http.post<Studentclass>(this.usersUrl, studentclass);
+  }
+  // public excutestudentList() {
+  //   return this.http.get<Studentclass>('http://localhost:8080/showme');
+  // }
+  // public viewStudentList() {
+  //   this.excutestudentList()
+  //   .subscribe(
+  //     response => this.handelresponse(response));
+  //   }
     handelresponse(response): Promise<any> {
 // this.Students = response;
     //  this.studentId = response.studentId;
@@ -33,7 +43,7 @@ constructor(private http: HttpClient
     //  this.telephoneNumber = response.telephoneNumber;
     //  this.email = response.email;
     //  console.log(response);
-    return Promise.resolve(console.log(response.email));
+    return Promise.resolve(response);
     }
 }
 
