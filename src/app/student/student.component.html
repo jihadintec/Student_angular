@@ -1,0 +1,45 @@
+<div class="uk-overflow-auto">
+    <table class="uk-table uk-table-small uk-table-divider">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First name</th>
+                <th>last name</th>
+                <th>mobile</th>
+                <th>Address</th>
+                <th>National number</th>
+                <th>gender</th>
+                <th>dateOfBirth</th>
+                <th>email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let Student of Students">
+                <tr>
+
+                    <!---- <td>[(ngModel)]="app-student.studentId"</td>
+                <td>[(ngModel)]="app-student.firstName"</td>
+                <td>[(ngModel)]="app-student.lastName"</td>
+                <td>[(ngModel)]="app-student.mobileNumber"</td>
+                <td>[(ngModel)]="app-student.address"</td>
+                <td>[(ngModel)]="app-student.nationalNumber"</td>
+                <td>[(ngModel)]="app-student.gender"</td>
+                <td>[(ngModel)]="app-student.dateOfBirth"</td>-->
+
+                    <td>{{ firstName }}</td>
+                    <td>{{lastName ? lastName : 'N/A'}}</td>
+                    <td>{{mobileNumber ? mobileNumber : 'N/A'}}</td>
+                    <td>{{address ? address : 'N/A'}}</td>
+                    <td>{{nationalNumber ? nationalNumber : 'N/A'}}</td>
+                    <td>{{gender ? gender : 'N/A'}}</td>
+                    <td>{{dateOfBirth ? dateOfBirth : 'N/A'}}</td>
+                    <!--<td>[(ngModel)]="app-student.email"</td>-->
+                    <td>{{email ? email : 'N/A'}}</td>
+                </tr>
+        </tbody>
+    </table>
+    <div>
+        <button (click)="viewStudentList()">clickme</button>
+    </div>
+</div>
+{{ firstName }}
